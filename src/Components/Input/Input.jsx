@@ -7,11 +7,12 @@ import grid from "../grid.module.css";
 const Input = ({
   hiddenTag,
   classGrid,
-  label = "label",
+  label,
   hover,
   focus,
-  error,
-  disabled,
+  placeholder = "Placeholder",
+  error = false,
+  disabled = false,
   helperText,
   startIcon,
   endIcon,
@@ -20,6 +21,7 @@ const Input = ({
   fullWidth,
   multiline,
   row,
+  text,
   ...props
 }) => {
   const valueText = useForm(value);
@@ -38,6 +40,7 @@ const Input = ({
               {helperText && `helperText="${helperText}"`}{" "}
               {startIcon && "startIcon"} {endIcon && "endIcon"}{" "}
               {size && `size="${size}"`} {fullWidth && "fullWidth"}{" "}
+              {value && `value="${value}"`}
               {multiline && "multiline"} {row && `row="${row}" `}
               {error && "error"}
               /&gt;
@@ -53,26 +56,31 @@ const Input = ({
         ${styles.input_group} 
         ${hover !== undefined ? styles.hover : ""} 
         ${focus !== undefined ? styles.focus : ""}
-        ${error !== undefined ? styles.error : ""}
-        ${disabled !== undefined ? styles.disabled : ""}
+        ${error === true ? styles.error : ""}
+        ${disabled === true ? styles.disabled : ""}
         ${size !== undefined ? styles[size] : ""}
         ${fullWidth !== undefined ? styles.fullWidth : ""}
         `}
       >
-        <label htmlFor={label}>
-          {label.charAt(0).toUpperCase() + label.slice(1)}
-        </label>
+        {label ? (
+          <label htmlFor={label}>
+            {label.charAt(0).toUpperCase() + label.slice(1)}
+          </label>
+        ) : (
+          <label htmlFor="label">Label</label>
+        )}
+
         <div
           className={`${startIcon ? styles.input_icon_start : ""} ${
             endIcon ? styles.input_icon_end : ""
           }`}
         >
-          {startIcon && <span class={"material-icons"}>{startIcon}</span>}
-          {endIcon && <span class={"material-icons"}>{endIcon}</span>}
+          {startIcon && <span className={"material-icons"}>{startIcon}</span>}
+          {endIcon && <span className={"material-icons"}>{endIcon}</span>}
           {!multiline ? (
             <input
               type="text"
-              placeholder="Placeholder"
+              placeholder={placeholder}
               name={label}
               id={label}
               disabled={disabled}
@@ -84,7 +92,7 @@ const Input = ({
             />
           ) : (
             <textarea
-              placeholder="Placeholder"
+              placeholder={placeholder}
               rows={row}
               className={`
             ${styles.input}
