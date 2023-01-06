@@ -7,6 +7,7 @@
 .componentGenerate {
   width: clamp(10rem, 50%, 30rem);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 
@@ -58,7 +59,8 @@
   gap: 1rem;
 }
 
-.containerInputs .input select {
+.containerInputs .input select,
+.containerInputs .input input[type="text"] {
   color: #4f4f4f;
   flex: 1;
   min-width: 10rem;
@@ -69,7 +71,9 @@
 }
 
 .containerInputs .input select:hover,
-.containerInputs .input select:focus {
+.containerInputs .input input[type="text"]:hover,
+.containerInputs .input select:focus,
+.containerInputs .input input[type="text"]:focus {
   outline: 0;
   background: rgba(221, 221, 221, 0.5);
 }

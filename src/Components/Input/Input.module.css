@@ -8,7 +8,7 @@
 }
 
 .containerInput {
-  padding: .5rem;
+  padding: 0.5rem;
 }
 
 .containerInput p {
@@ -48,7 +48,6 @@
   width: 100%;
   max-width: 14rem;
 
-
   border: 1px solid var(--c2);
   outline: none;
   border-radius: 0.5rem;
@@ -78,16 +77,26 @@
   border-color: var(--p1);
 }
 
+.input_group.hover input {
+  border-color: inherit;
+}
+
 .input_group:focus-within label,
 .input_group.focus label {
   color: var(--p1);
 }
 
+.input_group.hover label {
+  color: inherit;
+}
+
 /* Error */
-.input_group.error {
+.input_group.error,
+.input_group.error.focus:hover label {
   color: var(--p2);
 }
-.input_group.error input {
+.input_group.error input,
+.input_group.error.focus:hover input {
   border-color: var(--p2);
 }
 .input_group.error label {
