@@ -68,4 +68,4 @@ $ npm start
 ## Contact
 
 - GitHub [@Jorge-Guedes](https://github.com/Jorge-Guedes)
-- Linkedin [Jorge Guedes](www.linkedin.com/in/jorge-guedes-a389b1260)
+- Linkedin [Jorge Guedes](https://www.linkedin.com/in/jorge-guedes)
