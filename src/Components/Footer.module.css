@@ -1,0 +1,19 @@
+.footer {
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(.5rem, 4vw, .875rem);
+    font-weight: 500;
+    color: #A9A9A9;
+    margin-top: 4rem;
+}
+
+.footerLink {
+    font-family: "Montserrat", sans-serif;
+    color: inherit;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.footerLink:hover,
+.footerLink:focus {
+    color: #777;
+}

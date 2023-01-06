@@ -1,0 +1,153 @@
+:root {
+  --nav_height_mobile: 5rem;
+}
+
+.nav,
+.navMobile {
+  display: flex;
+  background: #fafbfd;
+  padding-block: clamp(1rem, 2vw, 2rem);
+  padding-inline: clamp(1.5rem, 4vw, 3rem);
+}
+
+.nav {
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  flex-direction: column;
+}
+
+.navMobile {
+  height: var(--nav_height_mobile);
+  min-height: initial;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row;
+  background: #eee;
+}
+
+.logo {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #090f31;
+}
+
+.logo span {
+  color: #f7542e;
+}
+
+.menu,
+.menuMobile {
+  list-style: none;
+}
+
+.menu {
+  margin-top: 20%;
+}
+
+.menuMobile {
+  width: 100%;
+  background: #090f31;
+  position: absolute;
+  top: var(--nav_height_mobile);
+  left: -1000px;
+  z-index: 1000;
+
+  pointer-events: none;
+  visibility: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.4s ease-in-out;
+}
+
+.navMobile.active .menuMobile {
+  pointer-events: initial;
+  left: 0;
+  top: var(--nav_height_mobile);
+  visibility: visible;
+}
+
+.menu li a {
+  font-family: "Noto Sans", sans-serif;
+  color: #9e9e9e;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.menuMobile li {
+  width: 100%;
+}
+
+.menuMobile li a {
+  padding: 0.3rem;
+  text-align: center;
+  display: block;
+  width: inherit;
+  color: #d5dbfa;
+}
+
+.menuMobile li:not(:last-child) a {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.menu li:not(:last-child) a {
+  margin-bottom: 2rem;
+  display: block;
+}
+
+.menu li a:hover,
+.menu li a:focus,
+.menu li a:global(.active) {
+  outline: none;
+  color: #090f31;
+}
+
+.menuMobile li a:hover,
+.menuMobile li a:focus,
+.menuMobile li a:global(.active) {
+  outline: none;
+  color: #f7542e;
+}
+
+.buttonMobile {
+  border: 0;
+  outline: 0;
+  border-top: 0.125rem solid #090f31;
+  width: 1.5rem;
+  cursor: pointer;
+}
+
+.buttonMobile::after,
+.buttonMobile::before {
+  content: "";
+  display: block;
+  width: 1.5rem;
+  height: 0.125rem;
+  background: currentColor;
+  margin-top: 0.3125rem;
+  transition: 0.3s;
+  position: relative;
+}
+
+.navMobile.active .buttonMobile {
+  border-top-color: transparent;
+}
+
+.navMobile.active .buttonMobile::before {
+  transform: rotate(135deg);
+}
+
+.navMobile.active .buttonMobile::after {
+  transform: rotate(-135deg);
+  top: -0.4375rem;
+}
+
+@media (max-width: 40rem) {
+  .Nav {
+    padding-inline: 1.3rem;
+  }
+}

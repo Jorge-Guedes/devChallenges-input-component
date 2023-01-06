@@ -1,0 +1,20 @@
+.menuButtons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: flex-end;
+  gap: clamp(1.2rem, 6vw, 2rem) clamp(0.5rem, 3vw, 1rem);
+  margin-bottom: 3.75rem;
+}
+
+@media (max-width: 62.5rem) {
+  .menuButtons {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+}
+
+@media (max-width: 16rem) {
+  .menuButtons {
+    grid-template-columns: 1fr;
+  }
+}
