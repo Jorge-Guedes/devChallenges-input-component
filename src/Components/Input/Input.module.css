@@ -1,0 +1,168 @@
+:root {
+  --c1: #333;
+  --c2: #828282;
+  --c3: #e0e0e0;
+  --c4: #f2f2f2;
+  --p1: #2962ff;
+  --p2: #d32f2f;
+}
+
+.containerInput {
+  padding: .5rem;
+}
+
+.containerInput p {
+  margin-bottom: 1rem;
+}
+
+.containerInput label {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--c1);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.helper {
+  display: block;
+  color: var(--c2);
+  color: inherit;
+  font-size: 0.625rem;
+  font-weight: 400;
+  margin-top: 0.25rem;
+}
+
+.input_two {
+  position: relative;
+}
+
+/* Default Input */
+.input {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--c1);
+  width: 100%;
+  max-width: 14rem;
+
+
+  border: 1px solid var(--c2);
+  outline: none;
+  border-radius: 0.5rem;
+  padding: 1.125rem 0.75rem;
+
+  display: flex;
+  align-items: center;
+}
+
+.input_group {
+  color: var(--c1);
+  border-color: var(--c2);
+}
+
+.input:hover,
+.input_group.hover input {
+  border-color: var(--c1);
+}
+
+.input::placeholder {
+  color: var(--c2);
+}
+
+.input:focus,
+.input_group input:focus,
+.input_group.focus input {
+  border-color: var(--p1);
+}
+
+.input_group:focus-within label,
+.input_group.focus label {
+  color: var(--p1);
+}
+
+/* Error */
+.input_group.error {
+  color: var(--p2);
+}
+.input_group.error input {
+  border-color: var(--p2);
+}
+.input_group.error label {
+  color: inherit;
+}
+.input_group.error:hover input,
+.input_group.error.hover input {
+  border-color: inherit;
+}
+.input_group.error:hover label,
+.input_group.error.hover label {
+  color: var(--c1);
+}
+
+/* Disabled */
+.input_group.disabled input {
+  border-color: var(--c3);
+  background: var(--c4);
+  cursor: not-allowed;
+}
+.input_group.disabled label {
+  color: inherit;
+}
+
+/* ICONS */
+.input_icon_start,
+.input_icon_end {
+  width: fit-content;
+  color: var(--c2);
+  position: relative;
+}
+
+.input_icon_start input {
+  padding-left: 2.75rem;
+  padding-right: 0.2rem;
+}
+
+.input_icon_start span,
+.input_icon_end span {
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: inherit;
+}
+
+.input_icon_start span {
+  left: 0.75rem;
+}
+
+.input_icon_end span {
+  right: 0.75rem;
+}
+
+/* SIZE */
+.input_group.sm input {
+  padding-block: 0.625rem;
+}
+.input_group.md input {
+  padding-block: 1.125rem;
+}
+.input_group.lg input {
+  padding-block: 1.5rem;
+}
+
+/* FULLWIDTH */
+.containerInput.full {
+  grid-column: 1 / -1;
+}
+.input_group.fullWidth input {
+  width: 100%;
+  max-width: none;
+}
+
+/* MULTILINE */
+.multiline {
+  resize: none;
+}

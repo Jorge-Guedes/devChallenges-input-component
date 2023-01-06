@@ -1,0 +1,21 @@
+.menuInputs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: flex-end;
+  gap: clamp(1.2rem, 6vw, 2rem) clamp(0.5rem, 3vw, 1rem);
+  padding: 0.625rem;
+  margin-bottom: 3.75rem;
+}
+
+@media (max-width: 62.5rem) {
+  .menuInputs {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+}
+
+@media (max-width: 20rem) {
+  .menuInputs {
+    grid-template-columns: 1fr;
+  }
+}
