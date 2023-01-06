@@ -1,0 +1,12 @@
+@media (min-width: 62.5rem) {
+    .column_4 {
+      grid-column: span 4;
+    }
+    .column_3 {
+      grid-column: span 3;
+    }
+    .column_2 {
+      grid-column: span 2;
+    }
+  }
+  
